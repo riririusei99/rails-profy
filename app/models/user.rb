@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   #accessor
   attr_accessor :group_key
+  
+  belongs_to :group
 end
