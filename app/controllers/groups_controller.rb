@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
   def show
-    @group = Group.find(:id)
+    @group = Group.find(params[:id])
   end
 end
