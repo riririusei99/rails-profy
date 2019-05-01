@@ -17,4 +17,7 @@
       <%= f.submit "質問する" %>
     <% end %>
   </div>
+  <!--質問のテンプレートを読む-->
+  <%= render partial: "questions/question", collection: @questions %>
+  
 <% end %>
