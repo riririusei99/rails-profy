@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-
+  has_one_attached :image 
+  
   #accessor
   attr_accessor :group_key
 
@@ -31,6 +32,18 @@ class User < ApplicationRecord
     else
       false
     end
+  end
+  
+  def name
+    "#{family_name} #{first_name}"
+  end
+
+  def name_kana
+    "#{family_name_kana} #{first_name_kana}"
+  end
+  
+  def full_profile?
+    image.present? && family_name? && first_name? && family_name_kana? && first_name_kana?
   end
   
   private
