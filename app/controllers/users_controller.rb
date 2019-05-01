@@ -7,7 +7,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    binding.pry
     current_user.update(update_params)
   end
   
