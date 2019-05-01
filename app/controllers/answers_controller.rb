@@ -27,6 +27,10 @@ class AnswersController < ApplicationController
   def create_params
     params.require(:answer).permit(:question_id, :text).merge(user_id: current_user.id)
   end
+  
+  def update_params
+    params.require(:answer).permit(:text)
+  end
 
   def redirect
     if Answer.exists?(question_id: params[:question_id], user_id: current_user.id)
