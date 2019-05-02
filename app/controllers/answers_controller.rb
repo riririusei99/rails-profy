@@ -9,6 +9,7 @@ class AnswersController < ApplicationController
   end
 
   def create
+    # binding.pry
     @answer = Answer.create(create_params)
   end
 
